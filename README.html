@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
   
@@ -176,6 +176,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="SebastianP/ViscoElasticShell_NGS24.html">3. Viscoelastic Shell formulation using HHJ Method</a></li>
 
+<li class="toctree-l1"><a class="reference internal" href="Madeline/notebook_workshop_vienna.html">5. Madeline</a></li>
 </ul>
 
     </div>
@@ -345,7 +346,24 @@ document.write(`
 <h1>ngs24blitz<a class="headerlink" href="#ngs24blitz" title="Link to this heading">#</a></h1>
 <p>Contributions are found here:
 <a class="reference external" href="https://ngsolve.github.io/ngs24blitz/">https://ngsolve.github.io/ngs24blitz/</a></p>
-<p>ghp-import -n -p -f _build/html</p>
+<ul>
+<li><p>clone the project:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/NGSolve/ngs24blitz.git
+</pre></div>
+</div>
+</li>
+<li><p>build the jupyter-book locally:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter-book build .
+</pre></div>
+</div>
+</li>
+<li><p>deploy the built book to gh-pages:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ghp-import -n -p -f _build/html
+</pre></div>
+</div>
+</li>
+</ul>
+<p>jupyter-books: <a class="reference external" href="https://jupyterbook.org/en/stable/start/overview.html">https://jupyterbook.org/en/stable/start/overview.html</a></p>
 </section>
 
     <script type="text/x-thebe-config">

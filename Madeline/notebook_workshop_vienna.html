@@ -1,0 +1,1330 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; NGSolve 24</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=3ee479438cf8b5e0d341" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=3ee479438cf8b5e0d341"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Madeline/notebook_workshop_vienna';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="3. Viscoelastic Shell formulation using HHJ Method" href="../SebastianP/ViscoElasticShell_NGS24.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NGSolve 24</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    NGSolve 24
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Siyar/graphene_nano_ribbon_toymodel.html">1. Solve the non-linear Poisson equation for a graphene nano ribbon</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../SebastianP/ViscoElasticShell_NGS24.html">3. Viscoelastic Shell formulation using HHJ Method</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/NGSolve/ngs24blitz" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Madeline/notebook_workshop_vienna.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">netgen.geom2d</span> <span class="kn">import</span> <span class="n">CSG2d</span><span class="p">,</span> <span class="n">Circle</span><span class="p">,</span> <span class="n">Rectangle</span>
+<span class="kn">from</span> <span class="nn">ngsolve</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">ngsolve</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Anneau</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Initialise la géométrie d&#39;un anneau (cercle_ext-cercle_int)&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r_int</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">r_ext</span> <span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise l&#39;anneau</span>
+<span class="sd">                </span>
+<span class="sd">        Paramètres</span>
+<span class="sd">        ----------</span>
+<span class="sd">        r_int : float</span>
+<span class="sd">            rayon du cercle intérieur</span>
+<span class="sd">        r_ext : float  </span>
+<span class="sd">            rayon du cercle extérieur</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r_int</span> <span class="o">=</span> <span class="n">r_int</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r_ext</span> <span class="o">=</span> <span class="n">r_ext</span>
+        <span class="k">if</span> <span class="n">r_ext</span><span class="o">&lt;</span> <span class="n">r_int</span> <span class="ow">or</span> <span class="n">r_int</span><span class="o">&lt;=</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">r_ext</span> <span class="o">&lt;=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span>
+        <span class="n">geo</span> <span class="o">=</span> <span class="n">CSG2d</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_ext</span> <span class="o">=</span> <span class="s1">&#39;bc_circle_ext&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut </span>
+<span class="sd">        ----------</span>
+<span class="sd">        label_ext : str</span>
+<span class="sd">            label du cercle extérieur</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_int</span> <span class="o">=</span> <span class="s1">&#39;bc_circle_int&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut </span>
+<span class="sd">        ----------</span>
+<span class="sd">        label_int : str</span>
+<span class="sd">            label du cercle intérieur</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#square = Rectangle(pmin = (-1,-1),pmax = (1,1),bc = &quot;bc_rect&quot;)</span>
+        <span class="n">cercle_ext</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">radius</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_ext</span><span class="p">,</span> <span class="n">bc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_ext</span><span class="p">)</span>
+        <span class="n">circle_int</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">radius</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_int</span><span class="p">,</span> <span class="n">bc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_int</span><span class="p">)</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="n">cercle_ext</span><span class="o">-</span><span class="n">circle_int</span>
+        <span class="n">geo</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geo</span> <span class="o">=</span> <span class="n">geo</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut</span>
+<span class="sd">        ---------</span>
+<span class="sd">        geo : Géométrie</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Square</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Représente la géométrie d&#39;un carré en extérieur et cercle en intérieur&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">r_int</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pmin</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">pmax</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialisation de la géométrie</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        -----------</span>
+<span class="sd">        r_int : float</span>
+<span class="sd">            rayon du cercle intérieur</span>
+<span class="sd">        pmin : tuple[float]</span>
+<span class="sd">            point en bas à gauche du carré</span>
+<span class="sd">        pmax : tuple[float]</span>
+<span class="sd">            point en haut à droite du carré</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r_int</span> <span class="o">=</span> <span class="n">r_int</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmin</span> <span class="o">=</span> <span class="n">pmin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmax</span> <span class="o">=</span> <span class="n">pmax</span>
+        <span class="k">if</span> <span class="n">r_int</span><span class="o">&lt;=</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">pmin</span><span class="o">&gt;</span> <span class="n">pmax</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_ext</span> <span class="o">=</span> <span class="s1">&#39;bc_rect&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut </span>
+<span class="sd">        ----------</span>
+<span class="sd">        label_ext : str</span>
+<span class="sd">            label du carré</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_int</span> <span class="o">=</span> <span class="s1">&#39;bc_circle&#39;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut </span>
+<span class="sd">        ----------</span>
+<span class="sd">        label_int : str</span>
+<span class="sd">            label du cercle intérieur</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">geo</span> <span class="o">=</span> <span class="n">CSG2d</span><span class="p">()</span>
+        <span class="n">rectangle</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">pmin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pmin</span><span class="p">,</span><span class="n">pmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pmax</span><span class="p">,</span><span class="n">bc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_ext</span><span class="p">)</span>
+        <span class="n">circle_int</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">radius</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">bc</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label_int</span><span class="p">)</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">-</span><span class="n">circle_int</span>
+        <span class="n">geo</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geo</span> <span class="o">=</span> <span class="n">geo</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut</span>
+<span class="sd">        ---------</span>
+<span class="sd">        geo : Géométrie</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Demi_disque</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Permet de créer un demi-cercle avec un petit cercle à l&#39;intérieur</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">centre_demi</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">r_demi</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">r_int</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">pmin</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">pmax</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">]):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialisation de la géométrie</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        -----------</span>
+<span class="sd">        centre_demi : tuple[float]</span>
+<span class="sd">            centre du demi-cercle</span>
+<span class="sd">        r_demi : float</span>
+<span class="sd">            rayon du demi-cercle</span>
+<span class="sd">        r_int : float</span>
+<span class="sd">            rayon du cercle intérieur</span>
+<span class="sd">        pmin : tuple[float]</span>
+<span class="sd">            point en bas à gauche du carré</span>
+<span class="sd">        pmax : tuple[float]</span>
+<span class="sd">            point en haut à droite du carré</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">centre_demi</span> <span class="o">=</span> <span class="n">centre_demi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r_demi</span> <span class="o">=</span> <span class="n">r_demi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r_int</span> <span class="o">=</span> <span class="n">r_int</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmin</span> <span class="o">=</span> <span class="n">pmin</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmax</span> <span class="o">=</span> <span class="n">pmax</span>
+        <span class="n">geo</span> <span class="o">=</span> <span class="n">CSG2d</span><span class="p">()</span>
+        <span class="n">circle1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">center</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">centre_demi</span><span class="p">,</span> <span class="n">radius</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_demi</span><span class="p">,</span><span class="n">bc</span> <span class="o">=</span> <span class="s2">&quot;bc_circle1&quot;</span><span class="p">)</span>
+        <span class="n">circle2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="n">center</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">radius</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">r_int</span><span class="p">,</span> <span class="n">bc</span> <span class="o">=</span> <span class="s2">&quot;bc_circle2&quot;</span><span class="p">)</span>
+        <span class="n">rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="n">pmin</span> <span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pmin</span><span class="p">,</span> <span class="n">pmax</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pmax</span><span class="p">,</span> <span class="n">bc</span> <span class="o">=</span> <span class="s2">&quot;bc_rect&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_int</span> <span class="o">=</span> <span class="s2">&quot;bc_circle2&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut</span>
+<span class="sd">        ----------</span>
+<span class="sd">        label_int : str</span>
+<span class="sd">            label du demi-cercle</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label_ext</span> <span class="o">=</span> <span class="s2">&quot;bc_circle1|bc_rect&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut</span>
+<span class="sd">        ----------</span>
+<span class="sd">        label_ext : str</span>
+<span class="sd">            label du cercle extérieur</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">domain</span> <span class="o">=</span> <span class="n">circle1</span><span class="o">-</span><span class="n">circle2</span> <span class="o">-</span> <span class="n">rect</span>
+        <span class="n">geo</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="n">domain</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">geo</span> <span class="o">=</span> <span class="n">geo</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut</span>
+<span class="sd">        ---------</span>
+<span class="sd">        geo : Géométrie</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Maillage</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Représente un maillage&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">maxh</span> <span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">espace</span> <span class="p">:</span> <span class="n">Anneau</span><span class="o">|</span><span class="n">Square</span><span class="o">|</span><span class="n">Demi_disque</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;initialise un mesh </span>
+<span class="sd">        </span>
+<span class="sd">        Paramètres:</span>
+<span class="sd">        ----------</span>
+<span class="sd">        maxh : float</span>
+<span class="sd">            taille maximum du maillage</span>
+<span class="sd">        espace : Anneau|Square|Demi-Disque</span>
+<span class="sd">            Geometrie de l&#39;espace</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxh</span> <span class="o">=</span> <span class="n">maxh</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">espace</span> <span class="o">=</span> <span class="n">espace</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">espace</span><span class="o">.</span><span class="n">geo</span><span class="o">.</span><span class="n">GenerateMesh</span><span class="p">(</span><span class="n">maxh</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxh</span><span class="p">)</span>
+        <span class="n">mesh</span> <span class="o">=</span> <span class="n">Mesh</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span> <span class="o">=</span> <span class="n">mesh</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Attribut</span>
+<span class="sd">        ---------</span>
+<span class="sd">        mesh : maillage de l&#39;anneau</span>
+<span class="sd">        &quot;&quot;&quot;</span> 
+
+        
+    <span class="k">def</span> <span class="nf">inner_H1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">u</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">,</span><span class="n">v</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer le produit scalaire H¹</span>
+
+<span class="sd">        Paramètres:</span>
+<span class="sd">        ----------</span>
+<span class="sd">        u, v : Gridfunction</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        float : produit scalaire H¹ de u et v</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">u_H1</span><span class="p">,</span><span class="n">v_H1</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">u_H1</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">v_H1</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">u_H1</span><span class="o">*</span><span class="n">v_H1</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">InnerProduct</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">mat</span><span class="o">*</span><span class="n">v</span><span class="o">.</span><span class="n">vec</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">norme_H1_carre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">u</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer la norme H¹ au carré</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        ----------</span>
+<span class="sd">        u : Grifunction</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        --------</span>
+<span class="sd">        float : norme H¹ au carré de u</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_H1</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">u</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">inner_H1_0</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">u</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">,</span><span class="n">v</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer le produit scalaire H¹₀</span>
+
+<span class="sd">        Paramètres:</span>
+<span class="sd">        ----------</span>
+<span class="sd">        u, v : Gridfunction</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        float : produit scalaire H¹₀ de u et v</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">str_bords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dirichlet</span> <span class="o">=</span> <span class="n">str_bords</span><span class="p">)</span>
+        <span class="n">u_H1_0</span><span class="p">,</span><span class="n">v_H1_0</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">u_H1_0</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">v_H1_0</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">InnerProduct</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="n">mat</span><span class="o">*</span><span class="n">v</span><span class="o">.</span><span class="n">vec</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">norme_H1_0_carre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">u</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer la norme H¹₀ au carré</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        ----------</span>
+<span class="sd">        u : Grifunction</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        --------</span>
+<span class="sd">        float : norme H¹₀ au carré de u</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_H1_0</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">u</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">inner_L2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">,</span> <span class="n">v</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span> <span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer le produit scalaire L2</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        -----------</span>
+<span class="sd">        u: GridFunction</span>
+<span class="sd">        v : GridFunction</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        float : produit scalire L2 entre u et v</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">L2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">u_L2</span><span class="p">,</span> <span class="n">v_L2</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">u_L2</span><span class="o">*</span><span class="n">v_L2</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">InnerProduct</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">mat</span><span class="o">*</span><span class="n">v</span><span class="o">.</span><span class="n">vec</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">norme_L2_carre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer la norme L2 au carré</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        ----------</span>
+<span class="sd">        u: GridFunction</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        float : norme L2 carré de u</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_L2</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">u</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">discret_to_grid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">tab</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">flag</span> <span class="p">:</span> <span class="nb">bool</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GridFunction</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transforme un array (tab) en une fonction continue sur l&#39;espace fs</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        ----------</span>
+<span class="sd">        tab : np.ndarray</span>
+<span class="sd">            fonction discretisée sur l&#39;espace H1</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        GridFunction : tab transformée en GridFunction sur fs</span>
+
+<span class="sd">        Error</span>
+<span class="sd">        -------</span>
+<span class="sd">        IndexError : si la taille du tableau ne correspond pas au mesh utilisé pour définir fs</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">flag</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+            <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fes</span> <span class="o">=</span> <span class="n">L2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">gf</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">gf</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">IndexError</span>
+        <span class="n">gf</span><span class="o">.</span><span class="n">vec</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">tab</span>
+        <span class="k">return</span> <span class="n">gf</span> 
+    
+    <span class="k">def</span> <span class="nf">get_neighbor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">v1</span> <span class="p">:</span> <span class="n">NodeId</span> <span class="p">,</span><span class="n">v2</span> <span class="p">:</span> <span class="n">NodeId</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de trouver le troisième sommet d&#39;un triangle</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        -----------</span>
+<span class="sd">        v1 : Vertices</span>
+<span class="sd">            sommet sur le bord du maillage</span>
+<span class="sd">        v2 : vertices</span>
+<span class="sd">            sommet sur le bord du maillage</span>
+<span class="sd">        </span>
+<span class="sd">        Sortie</span>
+<span class="sd">        int : nombre du troisième sommet du triangle (unique car nous sommes sur le bord)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="n">VOL</span><span class="p">):</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">vertices</span>
+            <span class="k">if</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:</span>
+                <span class="k">if</span> <span class="n">v2</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span>
+                <span class="k">elif</span> <span class="n">v2</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span>
+            <span class="k">elif</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">:</span>
+                <span class="k">if</span> <span class="n">v2</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span>
+                <span class="k">elif</span> <span class="n">v2</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span>
+            <span class="k">elif</span> <span class="n">v1</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">v2</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span>
+                <span class="k">elif</span> <span class="n">v2</span> <span class="o">==</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+                    <span class="k">return</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span>
+
+
+    <span class="k">def</span> <span class="nf">vec_dir_norm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point0</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span><span class="n">point1</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span><span class="o">-&gt;</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de trouver le vecteur directeur normalisé entre deux points</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        ----------</span>
+<span class="sd">        point0 : tuple[float]</span>
+<span class="sd">        point1 : tuple[float]</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        ---------</span>
+<span class="sd">        list[float] : vecteur directeur normalisé</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="p">[</span><span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">point0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">point0</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">diff</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">diff</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">diff</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">s</span><span class="p">,</span> <span class="n">diff</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">s</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">vec_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point0</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span><span class="n">point1</span> <span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span><span class="o">-&gt;</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de trouver le vecteur directeur entre deux points</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        ----------</span>
+<span class="sd">        point0 : tuple[float]</span>
+<span class="sd">        point1 : tuple[float]</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        ---------</span>
+<span class="sd">        list[float] : vecteur directeur</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="p">[</span><span class="n">point1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">point0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">point1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">point0</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="k">return</span> <span class="n">diff</span>
+
+    <span class="k">def</span> <span class="nf">produit_scalaire</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_v1</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">],</span> <span class="n">list_v2</span> <span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span><span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer le produit scalaire entre deux vecteurs</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        ----------</span>
+<span class="sd">        list_v1 : list[float]</span>
+<span class="sd">        list_v2 : list[float]</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        float : produit scalaire entre list_v1 et list_v2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">list_v1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">list_v2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">list_v1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">list_v2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">def</span> <span class="nf">get_derive_normal</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Paramètres</span>
+<span class="sd">        ---------</span>
+<span class="sd">        None</span>
+
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        list : dérivée normale, minimum, maximum</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">phi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_sol_elec</span><span class="p">()</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">min_r</span> <span class="o">=</span> <span class="mf">1e150</span>
+        <span class="n">max_r</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="n">BND</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">el</span><span class="o">.</span><span class="n">mat</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span><span class="p">:</span>
+                <span class="n">nr0</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span>
+                <span class="n">nr1</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span>
+                <span class="n">nr2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_neighbor</span><span class="p">(</span><span class="n">el</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">el</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">point0</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="n">nr0</span><span class="p">]</span><span class="o">.</span><span class="n">point</span>
+                <span class="n">point1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="n">nr1</span><span class="p">]</span><span class="o">.</span><span class="n">point</span>
+                <span class="n">point2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">vertices</span><span class="p">[</span><span class="n">nr2</span><span class="p">]</span><span class="o">.</span><span class="n">point</span>
+                <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vec_dir_norm</span><span class="p">(</span><span class="n">point0</span><span class="p">,</span><span class="n">point1</span><span class="p">)</span>
+                <span class="n">n</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">t2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">t2</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+                <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vec_dir</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span><span class="n">point2</span><span class="p">)</span>
+                <span class="n">t1_norm</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">t1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">t1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                <span class="n">p1_phi</span> <span class="o">=</span> <span class="p">(</span><span class="n">phi</span><span class="o">.</span><span class="n">vec</span><span class="p">[</span><span class="n">nr2</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">t1_norm</span>
+                <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vec_dir_norm</span><span class="p">(</span><span class="n">point1</span><span class="p">,</span><span class="n">point2</span><span class="p">)</span>
+                <span class="n">n_t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">produit_scalaire</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+                <span class="n">t1_t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">produit_scalaire</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">t2</span><span class="p">)</span>
+                <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">p1_phi</span><span class="o">*</span><span class="n">n_t1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t1_t2</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+                <span class="k">if</span> <span class="n">min_r</span> <span class="o">&gt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">p1_phi</span><span class="o">*</span><span class="n">n_t1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t1_t2</span><span class="o">**</span><span class="mi">2</span><span class="p">)):</span>
+                    <span class="n">min_r</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">p1_phi</span><span class="o">*</span><span class="n">n_t1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t1_t2</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+                <span class="k">elif</span> <span class="n">max_r</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">p1_phi</span><span class="o">*</span><span class="n">n_t1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t1_t2</span><span class="o">**</span><span class="mi">2</span><span class="p">)):</span>
+                    <span class="n">max_r</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">p1_phi</span><span class="o">*</span><span class="n">n_t1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">t1_t2</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">,</span> <span class="n">min_r</span><span class="p">,</span> <span class="n">max_r</span>
+
+    <span class="k">def</span> <span class="nf">get_sol_elec</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GridFunction</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet d&#39;obtenir la solution électrostatique</span>
+
+<span class="sd">        Paramètre</span>
+<span class="sd">        ----------</span>
+<span class="sd">        None</span>
+<span class="sd">        </span>
+<span class="sd">        Sortie</span>
+<span class="sd">        --------</span>
+<span class="sd">        GridFunction: solution électrostatique</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">str_bords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span><span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dirichlet</span> <span class="o">=</span><span class="n">str_bords</span><span class="p">)</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">BoundaryCF</span><span class="p">({</span><span class="bp">self</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">gfu</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+        <span class="n">gfu</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">BND</span><span class="p">)</span>
+        <span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">LinearForm</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+        <span class="n">c</span><span class="o">=</span> <span class="n">Preconditioner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;local&quot;</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+        <span class="n">solvers</span><span class="o">.</span><span class="n">BVP</span><span class="p">(</span><span class="n">bf</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">lf</span> <span class="o">=</span> <span class="n">f</span><span class="p">,</span> <span class="n">gf</span> <span class="o">=</span> <span class="n">gfu</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="nb">print</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">gfu</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Problem_2D</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Représente une instance du problème en 2D</span>
+<span class="sd">    On résout dans H^1</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">maillage</span> <span class="p">:</span> <span class="n">Maillage</span><span class="p">,</span> <span class="n">A</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise les paramètres nécessaires au problème 2D</span>
+
+<span class="sd">        Paramètres:</span>
+<span class="sd">        ------------</span>
+<span class="sd">        maillage : Maillage</span>
+<span class="sd">            maillage de l&#39;espace sur lequel on veut trouver les solutions</span>
+<span class="sd">        A : GridFunction</span>
+<span class="sd">            Condition de Neumann (peut être constante)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span> <span class="o">=</span> <span class="n">maillage</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">A</span>        
+    
+    <span class="k">def</span> <span class="nf">is_lower</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de savoir si la condition de Neumann est plus petite que la dérivée normale de la solution électrostatique</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        ---------</span>
+<span class="sd">        None</span>
+<span class="sd">        </span>
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">A_elec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">get_derive_normal</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">A_elec</span><span class="p">)</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">A_elec</span><span class="p">:</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">return</span> <span class="n">flag</span>
+    
+    <span class="k">def</span> <span class="nf">solve_phi1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ρ</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GridFunction</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Résout l&#39;équation Δφ = -ρ en φ où ρ est fixé avec les conditions mixte au bords c&#39;est-à-dire : ∇φ n=-A sur le bord intérieur ,φ=0 sur le bord extérieur</span>
+
+<span class="sd">        Paramètres:</span>
+<span class="sd">        ------------</span>
+<span class="sd">        ρ : GridFunction</span>
+<span class="sd">            ρ discrétisé sur le mesh</span>
+<span class="sd">        </span>
+<span class="sd">        Sortie:</span>
+<span class="sd">        --------</span>
+<span class="sd">        GridFunction : φ discrétisée sur le mesh</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1">#permet de créer une fonction coefficient avec 0 sur bc_circle1, 1 sur bc_circle2 et 0 ailleurs</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dirichlet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span><span class="p">)</span>
+        <span class="n">uD</span> <span class="o">=</span> <span class="n">CF</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">uN</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">BoundaryCF</span><span class="p">({</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span><span class="p">:</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">},</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="n">sol</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+        <span class="c1">#permet de mettre g comme condition de dirichlet</span>
+        <span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">LinearForm</span><span class="p">(</span><span class="n">ρ</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">uN</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">ds</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+        <span class="n">sol</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">uD</span><span class="p">,</span><span class="n">BND</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">=</span> <span class="n">Preconditioner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;local&quot;</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+        <span class="n">solvers</span><span class="o">.</span><span class="n">BVP</span><span class="p">(</span><span class="n">bf</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">lf</span> <span class="o">=</span> <span class="n">f</span><span class="p">,</span> <span class="n">gf</span> <span class="o">=</span> <span class="n">sol</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="nb">print</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">sol</span>
+    
+    <span class="k">def</span> <span class="nf">solve_phi2</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ρ</span><span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span>  <span class="n">GridFunction</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Résout l&#39;équation -∇ ∙ ((ρ+1) ∇φ) =ρ  avec des conditions de Dirichlet aux bords, c&#39;est-à-dire : φ=0 sur le cercle extérieur et φ = 1 sur le bord intérieur</span>
+
+<span class="sd">        Paramètres :</span>
+<span class="sd">        -----------</span>
+<span class="sd">        ρ : GridFunction   </span>
+<span class="sd">            ρ discrétisé sur le mesh</span>
+<span class="sd">            </span>
+<span class="sd">        Sortie:</span>
+<span class="sd">        --------</span>
+<span class="sd">        sol : Gridfunction</span>
+<span class="sd">            fonction solution de l&#39;équation discrétisé sur le mesh</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">str_bords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dirichlet</span> <span class="o">=</span> <span class="n">str_bords</span><span class="p">)</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">BoundaryCF</span><span class="p">({</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span><span class="p">:</span><span class="mi">0</span> <span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c1">#est-ce défini uniquement sur le bord?</span>
+        <span class="c1">#a un impact si on met CF pour condition de dirichlet ou juste BoundaryCF?</span>
+        <span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+        <span class="c1">#différence test et trial functions</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">((</span><span class="n">ρ</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span><span class="c1"># voir si ok comme ça</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">LinearForm</span><span class="p">(</span><span class="n">ρ</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span> 
+        <span class="n">sol</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+        <span class="c1">#gridfunction et CF: quelle est la différence</span>
+        <span class="c1">#comment est ce représenté de manière abstraite</span>
+        <span class="n">sol</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">BND</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">=</span> <span class="n">Preconditioner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;local&quot;</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span> <span class="c1">#à quoi sert le update?</span>
+        <span class="n">solvers</span><span class="o">.</span><span class="n">BVP</span><span class="p">(</span><span class="n">bf</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">lf</span> <span class="o">=</span> <span class="n">f</span><span class="p">,</span> <span class="n">gf</span> <span class="o">=</span> <span class="n">sol</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="nb">print</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="c1">#existe-t-il d&#39;autres solvers? BVP pour boundary value probleme</span>
+        <span class="k">return</span> <span class="n">sol</span>
+   
+
+    <span class="c1">#Deuxième partie de l&#39;algorithme, on calcule le gradient</span>
+
+    <span class="k">def</span> <span class="nf">solve_psi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ϕ1</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">,</span> <span class="n">ϕ2</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">,</span> <span class="n">ρ</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">GridFunction</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de résoudre -∇ ∙ ((ρ+1) ∇ψ) = Δ(ϕ1-ϕ2) avec les conditions de Dirichlet nulles au bord c&#39;est-a-dire ψ = 0 sur le bord</span>
+
+<span class="sd">        Paramètres:</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ϕ1 : Gridfunction</span>
+<span class="sd">            fonction solution obtenue par solve_phi1</span>
+<span class="sd">        ϕ2 : GridFunction</span>
+<span class="sd">            fonction solution obtenue par solve_phi2</span>
+<span class="sd">        ρ : GridFunction</span>
+<span class="sd">            ρ discrétisé sur le mesh</span>
+<span class="sd">        </span>
+<span class="sd">        Sortie:</span>
+<span class="sd">        --------</span>
+<span class="sd">        GridFunction : fonction solution discrétisée sur le mesh</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">str_bords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dirichlet</span> <span class="o">=</span> <span class="n">str_bords</span><span class="p">)</span>
+        <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">BoundaryCF</span><span class="p">({</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_int</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span> <span class="n">default</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="c1">#est-ce défini uniquement sur le bord?</span>
+        <span class="c1">#a un impact si on met CF pour condition de dirichlet ou juste BoundaryCF?</span>
+        <span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+        <span class="c1">#différence test et trial functions</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">((</span><span class="n">ρ</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span><span class="c1"># voir si ok comme ça</span>
+        <span class="n">fes_H0</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dirichlet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span><span class="p">)</span>
+        <span class="n">soustract</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes_H0</span><span class="p">)</span>
+        <span class="n">soustract</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">ϕ1</span><span class="o">-</span><span class="n">ϕ2</span><span class="p">)</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">LinearForm</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">soustract</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span> <span class="c1">#regarder si ça fonctionne grad sur fonction test dans linear form et grad sur fonction def avant</span>
+        <span class="n">sol</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+        <span class="c1">#gridfunction et CF: quelle est la différence</span>
+        <span class="c1">#comment est ce représenté de manière abstraite</span>
+        <span class="n">sol</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">g</span><span class="p">,</span><span class="n">BND</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">=</span> <span class="n">Preconditioner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;local&quot;</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span> <span class="c1">#à quoi sert le update?</span>
+        <span class="n">solvers</span><span class="o">.</span><span class="n">BVP</span><span class="p">(</span><span class="n">bf</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">lf</span> <span class="o">=</span> <span class="n">f</span><span class="p">,</span> <span class="n">gf</span> <span class="o">=</span> <span class="n">sol</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="nb">print</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="c1">#existe-t-il d&#39;autres solvers? BVP pour boundary value probleme</span>
+        <span class="k">return</span> <span class="n">sol</span>
+
+
+    <span class="k">def</span> <span class="nf">grad_J</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ρ</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer le gradient de la fonction à minimiser dans H^1</span>
+
+<span class="sd">        Paramètres</span>
+<span class="sd">        -----------</span>
+<span class="sd">        ρ : np.ndarray</span>
+<span class="sd">            ρ discrétisé sous forme de tableau, valeur en chaque point du mesh</span>
+<span class="sd">        </span>
+<span class="sd">        Sortie</span>
+<span class="sd">        -------</span>
+<span class="sd">        np.ndarray : gradient de J par rapport à ρ</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ρ_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">discret_to_grid</span><span class="p">(</span><span class="n">ρ</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">ϕ1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_phi1</span><span class="p">(</span><span class="n">ρ_grid</span><span class="p">)</span>
+        <span class="n">ϕ2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_phi2</span><span class="p">(</span><span class="n">ρ_grid</span><span class="p">)</span>
+        <span class="n">psi</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_psi</span><span class="p">(</span><span class="n">ϕ1</span><span class="p">,</span> <span class="n">ϕ2</span><span class="p">,</span> <span class="n">ρ_grid</span><span class="p">)</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+        <span class="n">sol</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">grad</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">u</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">LinearForm</span><span class="p">((</span><span class="n">ϕ1</span><span class="o">-</span><span class="n">ϕ2</span><span class="o">-</span><span class="n">psi</span> <span class="o">+</span> <span class="n">grad</span><span class="p">(</span><span class="n">ϕ2</span><span class="p">)</span><span class="o">*</span><span class="n">grad</span><span class="p">(</span><span class="n">psi</span><span class="p">))</span><span class="o">*</span><span class="n">v</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">Preconditioner</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;local&quot;</span><span class="p">)</span>
+        <span class="n">c</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+        <span class="n">solvers</span><span class="o">.</span><span class="n">BVP</span><span class="p">(</span><span class="n">bf</span> <span class="o">=</span> <span class="n">a</span><span class="p">,</span> <span class="n">lf</span> <span class="o">=</span> <span class="n">f</span><span class="p">,</span> <span class="n">gf</span> <span class="o">=</span> <span class="n">sol</span><span class="p">,</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">c</span><span class="p">,</span> <span class="nb">print</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="n">grad_J_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">vec</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">grad_J_array</span>
+    
+    <span class="k">def</span> <span class="nf">J</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ρ</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de calculer la fonction à minimiser J</span>
+
+<span class="sd">        Paramètre</span>
+<span class="sd">        ---------</span>
+<span class="sd">        ρ : np.ndarray</span>
+<span class="sd">            ρ discrétisé sous forme de tableau, valeur en chaque point du mesh</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ρ_grid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">discret_to_grid</span><span class="p">(</span><span class="n">ρ</span><span class="p">,</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">ϕ1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_phi1</span><span class="p">(</span><span class="n">ρ_grid</span><span class="p">)</span>
+        <span class="n">ϕ2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">solve_phi2</span><span class="p">(</span><span class="n">ρ_grid</span><span class="p">)</span>
+        <span class="c1">#phi1-phi2 devient coefficient function</span>
+        <span class="c1">#retransformer en Gridfunction avant d&#39;appliquer la norme</span>
+        <span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dirichlet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">espace</span><span class="o">.</span><span class="n">label_ext</span><span class="p">)</span>
+        <span class="n">soustract</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+        <span class="n">soustract</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">ϕ1</span><span class="o">-</span><span class="n">ϕ2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">maillage</span><span class="o">.</span><span class="n">norme_H1_0_carre</span><span class="p">(</span><span class="n">soustract</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">minimize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ρ</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Permet de faire la minimisation</span>
+
+<span class="sd">        Paramètre</span>
+<span class="sd">        --------</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">min</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">J</span><span class="p">,</span> <span class="n">ρ</span><span class="p">,</span>
+                                  <span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;L-BFGS-B&quot;</span><span class="p">,</span> <span class="n">jac</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grad_J</span><span class="p">,</span> <span class="n">tol</span> <span class="o">=</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="n">options</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ftol&#39;</span> <span class="p">:</span> <span class="mf">1e-9</span><span class="p">,</span> <span class="s1">&#39;gtol&#39;</span> <span class="p">:</span> <span class="mf">1e-9</span><span class="p">})</span>
+        <span class="k">return</span> <span class="nb">min</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">ngsolve</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">ngsolve</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.tri</span> <span class="k">as</span> <span class="nn">mtri</span>
+
+
+<span class="k">def</span> <span class="nf">rho</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">λ</span> <span class="o">&gt;=-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">λ</span><span class="o">/</span><span class="p">((</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="n">r_0</span><span class="p">))</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">λ</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">elif</span> <span class="n">λ</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">r_0</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span>  <span class="o">-</span><span class="n">λ</span><span class="o">/</span><span class="p">((</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="n">r_0</span><span class="p">))</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">λ</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">λ</span> <span class="o">&gt;=-</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">λ</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span> <span class="n">log</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">λ</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">λ</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">r_0</span><span class="o">**</span><span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">λ</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">atan</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">λ</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">A_lambda</span><span class="p">(</span><span class="n">λ</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">λ</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">r_0</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="n">r_0</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">ϕ</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">f</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="n">r_0</span><span class="p">))</span>
+
+<span class="c1">#Définition de l&#39;espace </span>
+<span class="n">r_0</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">λ</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
+
+<span class="c1">#espace = Demi_disque((0,-1), 2.0,0.5,(-3,-3),(2,-1))</span>
+<span class="c1">#espace = Square(0.3,(-1,-1),(1,1))</span>
+<span class="n">espace</span> <span class="o">=</span> <span class="n">Anneau</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">maillage</span> <span class="o">=</span> <span class="n">Maillage</span><span class="p">(</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">espace</span><span class="p">)</span>
+
+<span class="n">deriv_normal</span> <span class="o">=</span> <span class="n">maillage</span><span class="o">.</span><span class="n">get_derive_normal</span><span class="p">()[</span><span class="mi">1</span><span class="p">]</span> 
+<span class="n">fes</span> <span class="o">=</span> <span class="n">H1</span><span class="p">(</span><span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="p">,</span> <span class="n">order</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+
+<span class="n">ρ_exact</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">ρ_exact</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">rho</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">))</span>
+
+<span class="n">phi_exact</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">phi_exact</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">ϕ</span><span class="p">(</span><span class="n">λ</span><span class="p">,</span><span class="n">r_0</span><span class="p">,</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="n">val_A</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">val_A</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">A_lambda</span><span class="p">(</span><span class="n">λ</span><span class="p">))</span>
+
+
+<span class="n">p_H1</span> <span class="o">=</span> <span class="n">Problem_2D</span><span class="p">(</span><span class="n">maillage</span><span class="p">,</span><span class="n">val_A</span><span class="p">)</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p_H1&quot;</span><span class="p">,</span><span class="n">p_H1</span><span class="o">.</span><span class="n">is_lower</span><span class="p">())</span>
+
+
+<span class="n">ρ_grid</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">ρ_grid</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span> <span class="o">+</span><span class="mi">4</span><span class="p">)</span> 
+<span class="n">ρ_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ρ_grid</span><span class="o">.</span><span class="n">vec</span><span class="p">)</span>
+<span class="n">ρ_init</span> <span class="o">=</span> <span class="n">ρ_array</span>
+
+
+<span class="n">res_H1</span> <span class="o">=</span> <span class="n">p_H1</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">ρ_array</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;H1&quot;</span><span class="p">,</span><span class="n">res_H1</span><span class="o">.</span><span class="n">nit</span><span class="p">,</span> <span class="n">res_H1</span><span class="o">.</span><span class="n">success</span><span class="p">,</span> <span class="n">res_H1</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">res_H1</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+<span class="n">ρ_sol_grid_H1</span> <span class="o">=</span> <span class="n">maillage</span><span class="o">.</span><span class="n">discret_to_grid</span><span class="p">(</span><span class="n">res_H1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">phi1_H1</span> <span class="o">=</span> <span class="n">p_H1</span><span class="o">.</span><span class="n">solve_phi1</span><span class="p">(</span><span class="n">ρ_sol_grid_H1</span><span class="p">)</span>
+<span class="n">phi2_H1</span> <span class="o">=</span> <span class="n">p_H1</span><span class="o">.</span><span class="n">solve_phi2</span><span class="p">(</span><span class="n">ρ_sol_grid_H1</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">lower</span><span class="p">(</span><span class="n">f</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">,</span> <span class="n">a</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;f&lt;=a&quot;&quot;&quot;</span>
+    <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span><span class="n">a</span><span class="o">&gt;</span><span class="mf">10e-10</span><span class="p">:</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">flag</span>
+
+<span class="k">def</span> <span class="nf">upper</span><span class="p">(</span><span class="n">f</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">,</span> <span class="n">a</span> <span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;f &gt;a&quot;&quot;&quot;</span>
+    <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="nb">list</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">vec</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">f</span><span class="o">.</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span><span class="n">a</span><span class="p">:</span>
+            <span class="n">flag</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="nb">list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">vec</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">flag</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;phi1_H1&lt;=1&#39;</span> <span class="p">,</span> <span class="n">lower</span><span class="p">(</span><span class="n">phi1_H1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+
+
+<span class="n">triangles</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">Elements</span><span class="p">(</span><span class="n">VOL</span><span class="p">):</span> <span class="c1">#prend tous les triangles?</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">el</span><span class="o">.</span><span class="n">vertices</span>
+    <span class="n">triangles</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">nr</span><span class="p">])</span>
+
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">projection</span> <span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="o">.</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">vertices</span><span class="p">])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">v</span><span class="o">.</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">maillage</span><span class="o">.</span><span class="n">mesh</span><span class="o">.</span><span class="n">vertices</span><span class="p">])</span>
+<span class="c1">#phi_exact = GridFunction(fes)</span>
+<span class="c1">#phi_exact.Set(ϕ(λ,r_0,sqrt(x**2+y**2)))</span>
+<span class="c1">#rho_triang = rho(sqrt(X**2+Y**2),λ,r_0)</span>
+
+<span class="n">triang</span> <span class="o">=</span> <span class="n">mtri</span><span class="o">.</span><span class="n">Triangulation</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">Y</span><span class="p">,</span><span class="n">triangles</span> <span class="o">=</span> <span class="n">triangles</span><span class="p">)</span>
+<span class="c1">#ax.plot_trisurf(triang, rho_triang , label = &quot;rho_init&quot;, cmap = plt.cm.Spectral)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_trisurf</span><span class="p">(</span><span class="n">triang</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">phi1_H1</span><span class="o">.</span><span class="n">vec</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;phi1&quot;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">projection</span> <span class="o">=</span> <span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_trisurf</span><span class="p">(</span><span class="n">triang</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">phi2_H1</span><span class="o">.</span><span class="n">vec</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;phi2&quot;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">projection</span> <span class="o">=</span> <span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_trisurf</span><span class="p">(</span><span class="n">triang</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">res_H1</span><span class="o">.</span><span class="n">x</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;rho_num&quot;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+
+
+<span class="c1">#soustract_phi = GridFunction(fes)</span>
+<span class="c1">#soustract_phi.Set(phi1-phi2)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Solution pour A = 1.5, rho = x+4+y&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">soustract_rho_H1</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">soustract_rho_H1</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">ρ_sol_grid_H1</span> <span class="o">-</span> <span class="n">ρ_exact</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;norme L2 rho_num_H1 -rho_exact&quot;</span><span class="p">,</span> <span class="n">maillage</span><span class="o">.</span><span class="n">norme_L2_carre</span><span class="p">(</span><span class="n">soustract_rho_H1</span><span class="p">))</span>
+
+
+<span class="n">soustract_phi1_H1</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">soustract_phi1_H1</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">phi1_H1</span><span class="o">-</span> <span class="n">phi_exact</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;norme L2 phi1_H1 - phi_exact&quot;</span><span class="p">,</span> <span class="n">maillage</span><span class="o">.</span><span class="n">norme_L2_carre</span><span class="p">(</span><span class="n">soustract_phi1_H1</span><span class="p">))</span>
+
+
+<span class="n">soustract_phi2_H1</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="n">soustract_phi2_H1</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">phi2_H1</span><span class="o">-</span> <span class="n">phi_exact</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;norme L2 phi2_H1 - phi_exact&quot;</span><span class="p">,</span> <span class="n">maillage</span><span class="o">.</span><span class="n">norme_L2_carre</span><span class="p">(</span><span class="n">soustract_phi2_H1</span><span class="p">))</span>
+<span class="c1">#print(&quot;norme L2 phi1-phi2&quot;, maillage.norme_L2_carre(soustract_phi))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.400353870955472
+p_H1 True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H1 24 True 0 CONVERGENCE: REL_REDUCTION_OF_F_&lt;=_FACTR*EPSMCH
+[]
+phi1_H1&lt;=1 True
+</pre></div>
+</div>
+<img alt="../_images/0ae915d07ffb9ba3a2f7338ea6acdfb80358f078a1dc1420fd098bcf420f5f3e.png" src="../_images/0ae915d07ffb9ba3a2f7338ea6acdfb80358f078a1dc1420fd098bcf420f5f3e.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NgException</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">139</span>
+<span class="g g-Whitespace">    </span><span class="mi">137</span> <span class="n">soustract_rho_H1</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">138</span> <span class="n">soustract_rho_H1</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">ρ_sol_grid_H1</span> <span class="o">-</span> <span class="n">ρ_exact</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">139</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;norme L2 rho_num_H1 -rho_exact&quot;</span><span class="p">,</span> <span class="n">maillage</span><span class="o">.</span><span class="n">norme_L2_carre</span><span class="p">(</span><span class="n">soustract_rho_H1</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">142</span> <span class="n">soustract_phi1_H1</span> <span class="o">=</span> <span class="n">GridFunction</span><span class="p">(</span><span class="n">fes</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span> <span class="n">soustract_phi1_H1</span><span class="o">.</span><span class="n">Set</span><span class="p">(</span><span class="n">phi1_H1</span><span class="o">-</span> <span class="n">phi_exact</span><span class="p">)</span>
+
+<span class="nn">Cell In[5], line 119,</span> in <span class="ni">Maillage.norme_L2_carre</span><span class="nt">(self, u)</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span> <span class="k">def</span> <span class="nf">norme_L2_carre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">u</span> <span class="p">:</span> <span class="n">GridFunction</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="sd">     Permet de calculer la norme L2 au carré</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span><span class="sd"> </span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span><span class="sd">     float : norme L2 carré de u</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">119</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">inner_L2</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">u</span><span class="p">)</span>
+
+<span class="nn">Cell In[5], line 105,</span> in <span class="ni">Maillage.inner_L2</span><span class="nt">(self, u, v)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> <span class="n">u_L2</span><span class="p">,</span> <span class="n">v_L2</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TnT</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="n">a</span> <span class="o">=</span> <span class="n">BilinearForm</span><span class="p">(</span><span class="n">u_L2</span><span class="o">*</span><span class="n">v_L2</span><span class="o">*</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">Assemble</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">105</span> <span class="k">return</span> <span class="n">InnerProduct</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">vec</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">mat</span><span class="o">*</span><span class="n">v</span><span class="o">.</span><span class="n">vec</span><span class="p">)</span>
+
+<span class="ne">NgException</span>: BaseVector::InnerProduct: size of me = 448 != size of other = 2328
+</pre></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Madeline"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../SebastianP/ViscoElasticShell_NGS24.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Viscoelastic Shell formulation using HHJ Method</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By NGSolve
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=3ee479438cf8b5e0d341"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

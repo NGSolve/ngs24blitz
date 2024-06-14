@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>3. Viscoelastic Shell formulation using HHJ Method &#8212; NGSolve 24</title>
+    <title>Viscoelastic Shell formulation using HHJ Method &#8212; My Jupyter Book</title>
   
   
   
@@ -62,7 +62,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'SebastianP/ViscoElasticShell_NGS24';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="1. Solve the non-linear Poisson equation for a graphene nano ribbon" href="../Siyar/graphene_nano_ribbon_toymodel.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -125,6 +124,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -147,14 +148,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/NGSlogo.png" class="logo__image only-light" alt="NGSolve 24 - Home"/>
-    <script>document.write(`<img src="../_static/NGSlogo.png" class="logo__image only-dark" alt="NGSolve 24 - Home"/>`);</script>
   
+    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -178,10 +173,8 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Siyar/graphene_nano_ribbon_toymodel.html">1. Solve the non-linear Poisson equation for a graphene nano ribbon</a></li>
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Viscoelastic Shell formulation using HHJ Method</a></li>
 
 </ul>
 
@@ -224,21 +217,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-<a href="https://github.com/NGSolve/ngs24blitz" target="_blank"
-   class="btn btn-sm btn-source-repository-button"
-   title="Source repository"
-   data-bs-placement="bottom" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-
-</a>
-
 
 
 
@@ -346,16 +324,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Viscoelastic Shell formulation using HHJ Method</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-problem">4. Model Problem</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-properties">4.1. Geometrical Properties:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-parameters">4.2. Material Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-geometry-by-using-occ">4.3. Build Geometry by using OCC</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh-the-above-geometry-using-refinehp">4.4. Mesh the above Geometry using RefineHP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fe-spaces">4.5. FE Spaces</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-functions-and-useful-quantities">4.6. Special Functions and useful quantities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-and-trial-functions">4.7. Test and Trial Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bilinearform">4.8. BilinearForm</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Viscoelastic Shell formulation using HHJ Method</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-problem">Model Problem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-properties">Geometrical Properties:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-parameters">Material Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-geometry-by-using-occ">Build Geometry by using OCC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh-the-above-geometry-using-refinehp">Mesh the above Geometry using RefineHP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fe-spaces">FE Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-functions-and-useful-quantities">Special Functions and useful quantities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-and-trial-functions">Test and Trial Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bilinearform">BilinearForm</a></li>
 </ul>
 </li>
 </ul>
@@ -371,7 +349,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="viscoelastic-shell-formulation-using-hhj-method">
-<h1><span class="section-number">3. </span>Viscoelastic Shell formulation using HHJ Method<a class="headerlink" href="#viscoelastic-shell-formulation-using-hhj-method" title="Link to this heading">#</a></h1>
+<h1>Viscoelastic Shell formulation using HHJ Method<a class="headerlink" href="#viscoelastic-shell-formulation-using-hhj-method" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ngsolve</span> <span class="kn">import</span> <span class="o">*</span>
@@ -387,9 +365,9 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="model-problem">
-<h1><span class="section-number">4. </span>Model Problem<a class="headerlink" href="#model-problem" title="Link to this heading">#</a></h1>
+<h1>Model Problem<a class="headerlink" href="#model-problem" title="Link to this heading">#</a></h1>
 <section id="geometrical-properties">
-<h2><span class="section-number">4.1. </span>Geometrical Properties:<a class="headerlink" href="#geometrical-properties" title="Link to this heading">#</a></h2>
+<h2>Geometrical Properties:<a class="headerlink" href="#geometrical-properties" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \displaystyle
@@ -413,7 +391,7 @@ q_0 = 0.01 \text{ N mm}^{-2}
 </div>
 </section>
 <section id="material-parameters">
-<h2><span class="section-number">4.2. </span>Material Parameters<a class="headerlink" href="#material-parameters" title="Link to this heading">#</a></h2>
+<h2>Material Parameters<a class="headerlink" href="#material-parameters" title="Link to this heading">#</a></h2>
 <p><img alt="alt text" src="../_images/Picture2.png" /></p>
 <p>For the modeling of the viscoelastic behavior, we are using the generalized Maxwell Element as illustrated above. We assume an additive decomposition of the strains in terms of the Green strain tensor <span class="math notranslate nohighlight">\(\mathbf{E}\)</span>.</p>
 <p>The material is assumed incompressible.
@@ -452,7 +430,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="build-geometry-by-using-occ">
-<h2><span class="section-number">4.3. </span>Build Geometry by using OCC<a class="headerlink" href="#build-geometry-by-using-occ" title="Link to this heading">#</a></h2>
+<h2>Build Geometry by using OCC<a class="headerlink" href="#build-geometry-by-using-occ" title="Link to this heading">#</a></h2>
 <p>wire1 … horizontal part, wire2 … vertical part</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -500,14 +478,14 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "3131e90fb2384dd0bb6f8dc9868f52b8"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BaseWebGuiScene
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "63b2e5acf66c413dae5624ac057746fb"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BaseWebGuiScene
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="mesh-the-above-geometry-using-refinehp">
-<h2><span class="section-number">4.4. </span>Mesh the above Geometry using RefineHP<a class="headerlink" href="#mesh-the-above-geometry-using-refinehp" title="Link to this heading">#</a></h2>
+<h2>Mesh the above Geometry using RefineHP<a class="headerlink" href="#mesh-the-above-geometry-using-refinehp" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo</span> <span class="o">=</span> <span class="n">OCCGeometry</span><span class="p">(</span><span class="n">geometry</span><span class="p">)</span>
@@ -522,14 +500,14 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "5da67e54e9c3428687487fb3b8636b76"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BaseWebGuiScene
+<script type="application/vnd.jupyter.widget-view+json">{"version_major": 2, "version_minor": 0, "model_id": "44062adc4947477a9e85743223fc8480"}</script><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BaseWebGuiScene
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="fe-spaces">
-<h2><span class="section-number">4.5. </span>FE Spaces<a class="headerlink" href="#fe-spaces" title="Link to this heading">#</a></h2>
+<h2>FE Spaces<a class="headerlink" href="#fe-spaces" title="Link to this heading">#</a></h2>
 <p>Without going into the theory of the HHJ-shell method, we will refer to the various works by Schöberl, Neunteufel, Pechstein, et al.</p>
 <p>For the analysis of the problem, we are using the following variables in the associated FE Space:</p>
 <ul class="simple">
@@ -606,7 +584,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="special-functions-and-useful-quantities">
-<h2><span class="section-number">4.6. </span>Special Functions and useful quantities<a class="headerlink" href="#special-functions-and-useful-quantities" title="Link to this heading">#</a></h2>
+<h2>Special Functions and useful quantities<a class="headerlink" href="#special-functions-and-useful-quantities" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Nsurf</span> <span class="o">=</span> <span class="n">specialcf</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">dim</span><span class="p">)</span>              <span class="c1"># Surface normal N</span>
@@ -699,7 +677,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="test-and-trial-functions">
-<h2><span class="section-number">4.7. </span>Test and Trial Functions<a class="headerlink" href="#test-and-trial-functions" title="Link to this heading">#</a></h2>
+<h2>Test and Trial Functions<a class="headerlink" href="#test-and-trial-functions" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">u_</span><span class="p">,</span> <span class="n">hyb_</span><span class="p">,</span> <span class="n">eps_</span><span class="p">,</span> <span class="n">R_</span><span class="p">,</span> <span class="n">kappa_</span><span class="p">,</span> <span class="n">mom_</span><span class="p">,</span> <span class="n">eps_vi_</span><span class="p">,</span> <span class="n">kappa_vi_</span> <span class="o">=</span> <span class="n">fes</span><span class="o">.</span><span class="n">TrialFunction</span><span class="p">()[:</span><span class="mi">8</span><span class="p">]</span>
@@ -724,7 +702,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </section>
 <section id="bilinearform">
-<h2><span class="section-number">4.8. </span>BilinearForm<a class="headerlink" href="#bilinearform" title="Link to this heading">#</a></h2>
+<h2>BilinearForm<a class="headerlink" href="#bilinearform" title="Link to this heading">#</a></h2>
 <p>Recalling the variational formulation in the form
 $<span class="math notranslate nohighlight">\(
 	\delta\Psi+\frac{\partial\phi}{\partial\dot{\mathbf{E}_v}}\colon\delta\mathbf{E}_v+\delta W_{\text{ext}}=0,
@@ -878,103 +856,31 @@ For the fininte element analysis, the equation is used in the following form wit
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 0.18283846562987913
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 9.613622004225363e-11
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 9.620512082388821e-11
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0 seconds, total time: 5 seconds
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 2.7308183506030095
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 2.7308183505932773
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 1.2100974050095214e-11
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0 seconds, total time: 5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 5.394898164939767
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 3: Residuum = 3.39935646824724e-08
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 1.1403470822194712e-11
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0 seconds, total time: 5 seconds
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 7.969443307950139
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 5.394898164938039
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 3: Residuum = 2.3316472822128958e-08
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 3: Residuum = 3.399358278652611e-08
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0 seconds, total time: 5 seconds
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 10.42767602400301
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 3: Residuum = 1.6608197336892057e-08
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.208 seconds, total time: 5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 12.752706669639814
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 3.1688539557318255e-11
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.417 seconds, total time: 5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 10.084436382162
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 3.298624981935137e-11
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.625 seconds, total time: 5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 7.955637591997203
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 2.767537613672256e-11
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.833 seconds, total time: 5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 6.266032890456912
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 3.164675163369376e-11
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.042 seconds, total time: 5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 4.929740574780688
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 3.3889461186045196e-11
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.25 seconds, total time: 5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 3.8754412355306025
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Newton Step 4: Residuum = 2.935955710016503e-11
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.458 seconds, total time: 5 seconds
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 3.045025161455125
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	 Initial Residuum = 7.969443307956721
 </pre></div>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
@@ -1063,15 +969,6 @@ For the fininte element analysis, the equation is used in the following form wit
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../Siyar/graphene_nano_ribbon_toymodel.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Solve the non-linear Poisson equation for a graphene nano ribbon</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
@@ -1088,16 +985,16 @@ For the fininte element analysis, the equation is used in the following form wit
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">3. Viscoelastic Shell formulation using HHJ Method</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-problem">4. Model Problem</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-properties">4.1. Geometrical Properties:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-parameters">4.2. Material Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-geometry-by-using-occ">4.3. Build Geometry by using OCC</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh-the-above-geometry-using-refinehp">4.4. Mesh the above Geometry using RefineHP</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fe-spaces">4.5. FE Spaces</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-functions-and-useful-quantities">4.6. Special Functions and useful quantities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-and-trial-functions">4.7. Test and Trial Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bilinearform">4.8. BilinearForm</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Viscoelastic Shell formulation using HHJ Method</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#model-problem">Model Problem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#geometrical-properties">Geometrical Properties:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#material-parameters">Material Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-geometry-by-using-occ">Build Geometry by using OCC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesh-the-above-geometry-using-refinehp">Mesh the above Geometry using RefineHP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fe-spaces">FE Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-functions-and-useful-quantities">Special Functions and useful quantities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-and-trial-functions">Test and Trial Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bilinearform">BilinearForm</a></li>
 </ul>
 </li>
 </ul>
@@ -1115,7 +1012,7 @@ For the fininte element analysis, the equation is used in the following form wit
   <div class="footer-item">
     
 <p class="component-author">
-By NGSolve
+By The Jupyter Book community
 </p>
 
   </div>
@@ -1125,7 +1022,7 @@ By NGSolve
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2023.
       <br/>
     
   </p>

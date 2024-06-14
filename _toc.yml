@@ -10,3 +10,5 @@ parts:
     chapters:
     - file: Siyar/graphene_nano_ribbon_toymodel.ipynb
     - file: SebastianP/ViscoElasticShell_NGS24.ipynb
+    - file: Madeline/notebook_workshop_vienna.ipynb
+    

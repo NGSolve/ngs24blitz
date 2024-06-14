@@ -9,3 +9,4 @@ parts:
     numbered: True
     chapters:
     - file: Siyar/graphene_nano_ribbon_toymodel.ipynb
+    - file: SebastianP/ViscoElasticShell_NGS24.ipynb

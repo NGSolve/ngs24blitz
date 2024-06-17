@@ -13,7 +13,7 @@ repository:
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: auto
-  timeout: 120
+  timeout: 600
   exclude_patterns:
         - "plates/*"
         - "SaS/inflatingballoon.ipynb"

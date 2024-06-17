@@ -11,4 +11,7 @@ parts:
     - file: Siyar/graphene_nano_ribbon_toymodel.ipynb
     - file: SebastianP/ViscoElasticShell_NGS24.ipynb
     - file: Madeline/notebook_workshop_vienna.ipynb
+    - file: SHirnschall/metamaterial_thick.ipynb
+    - file: RDorigo/local_implicit.ipynb
+    - file: CLeonhartsberger/lobpcg_pinvit.ipynb
     
